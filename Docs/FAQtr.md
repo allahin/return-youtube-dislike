@@ -1,54 +1,55 @@
-Bunu diğer dillerde okuyun: [English](FAQ.md), [русский](FAQru.md), [Nederlands](FAQnl.md), [Français](FAQfr.md), [українська](FAQuk.md), [Polski](FAQpl.md), [Deutsch](FAQde.md)
+Diğer dillerde okuyun: [English](FAQ.md), [русский](FAQru.md), [Français](FAQfr.md), [Nederlands](FAQnl.md), [українська](FAQuk.md), [Polski](FAQpl.md), [Deutsch](FAQde.md), [Português do Brasil](FAQpt_BRmd)
 
-# Sıkça Sorulan Sorular
 
-## GitHub'da veya Discord'da bir soru sormadan önce, lütfen buraya göz atın.
+# Sık Sorulan Sorular
 
-<br>
-
-### **1. Bu uzantı verileri nereden alıyor?**
-
-Google API'lerinin ve kazınmış verilerin bir kombinasyonu.
-
-Google, API'lerinde dislike sayılarını kapattıktan sonra kullanılabilir olması için mevcut tüm verileri DB'mize kaydederiz.
+## GitHub veya Discord'da bir soru sormadan önce lütfen bu sayfaya bakın.
 
 <br>
 
-### **2. Video'nun dislike sayısı güncellenmiyor**
+### **1. Uzantı verileri nereden alıyor?**
 
-Şu anda video dislike'ları önbelleğe alınır ve çok sık güncellenmez. Her 2-3 günde bir, daha sık değil.
+Google API'leri ve toplanmış verilerin bir kombinasyonu.
 
-Evet, ideal değil, ama olan bu. Bunları nasıl daha sık güncelleyebileceğimizi öğrenmeye çalışıyoruz.
-
-<br>
-
-### **3. Bu uzantı nasıl çalışıyor?**
-
-Uzantı, izlediğiniz videonun video kimliğini alır, dislike'larını (ve görüntülemeleri, like'ları vb. diğer alanları) API'mizi kullanarak getirir; video, API'miz tarafından ilk kez getiriliyorsa YouTube API'sini kullanır. Verileri almak için, verileri önbelleğe alma (yaklaşık 2-3 gün önbelleğe alınır) ve arşivleme amacıyla bir veritabanında saklanır ve size geri döndürülür. Uzantı daha sonra size dislike'ları gösterir.
+Mevcut tüm verileri, Google'ın API'larındaki beğenmeme sayılarını kapatmasından sonra kullanılabilir olması için veritabanımıza kaydediyoruz.
 
 <br>
 
-### **4. YouTube API'si, dislike sayısını döndürmeyi durdurduğunda ne olacak?**
+### **2. Video beğenmeme sayısı güncellenmiyor?**
 
-Backend, arşivlenmiş dislike istatistikleri, uzantı kullanıcı verilerinden tahmin edilen tahminler ve like'ları arşivlenmemiş videolar ve eski dislike arşivleri için izlenme/like oranlarına dayalı tahminlerin bir kombinasyonunu kullanmaya geçecektir.
+Şu anda video beğenmemeleri önbelleğe alınıyor ve çok sık güncellenmiyor. Her 2-3 günde bir, daha sık değil.
+
+Evet, ideal değil ama durum bu. Bunları ne sıklıkta güncelleyebileceğimizi geliştirmek için çalışıyoruz.
 
 <br>
 
-### **5. Dislike sayısı nasıl hesaplanıyor?**
+### **3. Nasıl çalışıyor?**
 
-YDS, dislike sayısını tahmin etmek için kullanıcılarının oylarını kullanır.
+Uzantı, izlediğiniz videonun kimliğini toplar, API'mizi kullanarak beğenmeme durumunu (ve görüntüleme, beğeni vb. gibi diğer alanları) getirir, eğer video API'miz tarafından ilk kez getiriliyorsa, verileri almak için YouTube API'sini kullanır, ardından verileri önbelleğe alma (yaklaşık 2-3 gün önbelleğe alınır) ve arşivleme amacıyla bir veritabanında depolar ve size döndürür. Eklenti daha sonra beğenilmeyenleri size görüntüler.
 
-- Video, API kapatıldıktan sonra yüklendiyse:
+<br>
 
-  $$ \textup{YDS'nin Dislike Sayısı} = \left( \frac{\textup{YDS Kullanıcılarının Like Sayısı}}{\textup{YDS Kullanıcılarının Dislike Sayısı}} \right) \times \textup{Halka Açık Like Sayısı} $$
+### **4. YouTube API'si beğenmeme sayısını döndürmeyi durdurduktan sonra ne olacak?**
 
-- YDS veritabanı bir şekilde gerçek like ve dislike sayısına sahipse (yükleyici tarafından veya arşivden sağlanır), dislike sayısı hem kullanıcıların oyları hem de arşivlenen değer temelinde hesaplanacaktır. Arşivlenen değer, eskidikçe son sayım üzerinde daha az etkiye sahip olacaktır.
+Sunucu tarafında, arşivlenmiş beğenmeme istatistikleri, uzantı kullanıcı verilerinden çıkarılan tahminler ve beğenmemeleri arşivlenmemiş videolar ve eski beğenmeme arşivleri için görüntüleme/beğenme oranlarına dayalı tahminlerin bir kombinasyonunu kullanmaya geçecektir.
+
+<br>
+
+### **5. Beğenmeme sayısı nasıl hesaplanır?**
+
+RYD uses the votes from its users to extrapolate the dislike count.
+
+- If the video was uploaded after the API was shut down:
+
+  $$ \textup{RYD Dislike Count} = \left( \frac{\textup{RYD Users Dislike Count}}{\textup{RYD Users Like Count}} \right) \times \textup{Public Like Count} $$
+
+- If the RYD database somehow had the actual like and dislike count (provided by the uploader or from the archive), the dislike count will be calculated based on both - the users' votes and the archived value. The archived value will have less influence on the final count as it ages.
 
 <br>
 
 ---
 
-Bu video şeklinde
+This in video form
 
 [![IReturn YouTube Dislike Explained](https://yt-embed.herokuapp.com/embed?v=GSmmtv-0yYQ)](https://www.youtube.com/watch?v=GSmmtv-0yYQ)
 
@@ -56,6 +57,6 @@ Bu video şeklinde
 
 <br>
 
-## Gizlilik / güvenlik hakkında endişelerim var
+## Güvenlik / gizlilikle ilgili endişelerim var
 
-Daha fazla bilgi için [bu sayfa](SECURITY-FAQtr.md)ya göz atın.
+Daha fazla bilgi için [bu sayfaya](SECURITY-FAQtr.md) bakın.
