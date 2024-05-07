@@ -35,7 +35,7 @@ Sunucu tarafında, arşivlenmiş beğenmeme istatistikleri, uzantı kullanıcı 
 
 <br>
 
-### **5. Beğenmeme sayısı nasıl hesaplanır?**
+### **5. Dislike sayısı nasıl hesaplanıyor?**
 
 RYD, beğenmeme sayısını tahmin etmek için kullanıcılarından gelen oyları kullanır.
 
