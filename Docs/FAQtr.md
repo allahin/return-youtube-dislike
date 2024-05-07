@@ -37,21 +37,23 @@ Sunucu tarafında, arşivlenmiş beğenmeme istatistikleri, uzantı kullanıcı 
 
 ### **5. Beğenmeme sayısı nasıl hesaplanır?**
 
-RYD uses the votes from its users to extrapolate the dislike count.
+RYD, beğenmeme sayısını tahmin etmek için kullanıcılarından gelen oyları kullanır.
 
-- If the video was uploaded after the API was shut down:
+- Eğer video API kapatıldıktan sonra yüklenmişse:
 
-  $$ \textup{RYD Dislike Count} = \left( \frac{\textup{RYD Users Dislike Count}}{\textup{RYD Users Like Count}} \right) \times \textup{Public Like Count} $$
+  $$ \textup{RYD Beğenmeme Sayısı} = \left( \frac{\textup{RYD Kullanıcılarının Dislike Sayısı}}{\textup{RYD Kullanıcıları Like Sayısı}} \right) \times \textup{Genel Like Sayısı} $$
 
-- If the RYD database somehow had the actual like and dislike count (provided by the uploader or from the archive), the dislike count will be calculated based on both - the users' votes and the archived value. The archived value will have less influence on the final count as it ages.
+- RYD veritabanında bir şekilde gerçek beğeni ve beğenmeme sayıları varsa (yükleyen tarafından veya arşivden sağlanmışsa), beğenmeme sayısı hem kullanıcıların oylarına hem de arşivlenmiş değere göre hesaplanacaktır. Arşivlenen değer eskidikçe nihai sayım üzerinde daha az etkiye sahip olacaktır.
+
+RYD = Return YouTube Dislike eklentisi
 
 <br>
 
 ---
 
-This in video form
+Sayfanın video hali
 
-[![IReturn YouTube Dislike Explained](https://yt-embed.herokuapp.com/embed?v=GSmmtv-0yYQ)](https://www.youtube.com/watch?v=GSmmtv-0yYQ)
+[![IReturn YouTube Dislike nasıl çalışıyor?](https://yt-embed.herokuapp.com/embed?v=GSmmtv-0yYQ)](https://www.youtube.com/watch?v=GSmmtv-0yYQ)
 
 ---
 
