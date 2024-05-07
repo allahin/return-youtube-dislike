@@ -15,7 +15,7 @@ Mevcut tüm verileri, Google'ın API'larındaki beğenmeme sayılarını kapatma
 
 <br>
 
-### **2. Video beğenmeme sayısı güncellenmiyor?**
+### **2. Video'nun dislike sayısı neden güncellenmiyor?**
 
 Şu anda video beğenmemeleri önbelleğe alınıyor ve çok sık güncellenmiyor. Her 2-3 günde bir, daha sık değil.
 
@@ -29,7 +29,7 @@ Uzantı, izlediğiniz videonun kimliğini toplar, API'mizi kullanarak beğenmeme
 
 <br>
 
-### **4. YouTube API'si beğenmeme sayısını döndürmeyi durdurduktan sonra ne olacak?**
+### **4. YouTube API'si dislike sayısını döndürmeyi durdurduktan sonra ne olacak?**
 
 Sunucu tarafında, arşivlenmiş beğenmeme istatistikleri, uzantı kullanıcı verilerinden çıkarılan tahminler ve beğenmemeleri arşivlenmemiş videolar ve eski beğenmeme arşivleri için görüntüleme/beğenme oranlarına dayalı tahminlerin bir kombinasyonunu kullanmaya geçecektir.
 
@@ -51,14 +51,14 @@ RYD = Return YouTube Dislike eklentisi
 
 ---
 
-Sayfanın video hali
+Sayfanın video hali:
 
-[![IReturn YouTube Dislike nasıl çalışıyor?](https://yt-embed.herokuapp.com/embed?v=GSmmtv-0yYQ)](https://www.youtube.com/watch?v=GSmmtv-0yYQ)
+[![Return YouTube Dislike nasıl çalışıyor?](https://www.youtube.com/watch?v=GSmmtv-0yYQ)]
 
 ---
 
 <br>
 
-## Güvenlik / gizlilikle ilgili endişelerim var
+## Güvenlik / mahremiyetle ilgili endişelerim var
 
 Daha fazla bilgi için [bu sayfaya](SECURITY-FAQtr.md) bakın.
